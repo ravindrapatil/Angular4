@@ -1,0 +1,43 @@
+<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+  <div class="header">
+    <div class="container">
+      <h1>App Name</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-0">
+      &nbsp;
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4 style="text-align:center; padding:20px 0">Login</h4>
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+          <p *ngIf="userNotExist" style="color:red; text-align:center;">{{userNotExist}}</p>
+          <p *ngIf="!loginForm.controls.email.valid  && (loginForm.controls.email.dirty)">Please enter valid email.</p>
+		      <p *ngIf="!loginForm.controls.password.valid  && (loginForm.controls.password.dirty)">Please enter password.</p>
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10" [class.invalid]="!loginForm.controls.email.valid">
+              <input type="email" class="form-control" id="inputEmail" formControlName="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10" [class.invalid]="!loginForm.controls.password.valid">
+              <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log in</button>
+            </div>
+          </div>
+        </form>
+    </div>
+    <div class="col-md-3 col-sm-0">
+      &nbsp;
+    </div>
+  </div>
+</div>
