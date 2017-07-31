@@ -18,6 +18,8 @@ import { HeaderComponent } from '../app/header/header.component';
 import { LoginComponent } from '../app/login/login.component';
 import { SinglePostComponent } from "app/dasboard/single-post/single-post.component";
 import { SinglePostServiceService } from "app/providers/single-post-service.service";
+import { FirebasedbdataService } from "app/providers/firebasedbdata.service";
+import { BlogComponent } from "app/blog/blog.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { SinglePostServiceService } from "app/providers/single-post-service.serv
     CompaniesComponent,
     HeaderComponent,
     LoginComponent,
-    SinglePostComponent
+    SinglePostComponent,
+    BlogComponent
   ],
   entryComponents: [
     SinglePostComponent
@@ -43,7 +46,8 @@ import { SinglePostServiceService } from "app/providers/single-post-service.serv
   providers: [
     UsersService,
     AuthguardGuard,
-    SinglePostServiceService
+    SinglePostServiceService,
+    FirebasedbdataService
   ],
   bootstrap: [AppComponent]
 })

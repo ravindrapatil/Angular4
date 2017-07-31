@@ -3,6 +3,7 @@ import { DasboardComponent } from '../app/dasboard/dasboard.component';
 import { CompaniesComponent } from '../app/companies/companies.component';
 import { LoginComponent } from '../app/login/login.component';
 import { AuthguardGuard } from "../app/providers/authguard.guard";
+import { BlogComponent } from "app/blog/blog.component";
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
     path: 'companies',
     canActivate: [AuthguardGuard],
     component: CompaniesComponent
+  },
+  {
+    path: 'blog',
+    canActivate: [AuthguardGuard],
+    component: BlogComponent
   },
   {
     path: '',
